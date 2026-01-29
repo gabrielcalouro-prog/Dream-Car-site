@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Car Site</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .header {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #ff6b35;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        h1 {
+            font-size: 3.5em;
+            margin: 0;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .hero {
+            text-align: center;
+            margin: 60px 0;
+        }
+        .cars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .car-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 25px;
+            border: 2px solid rgba(255,107,53,0.3);
+            transition: transform 0.3s ease;
+        }
+        .car-card:hover {
+            transform: translateY(-5px);
+            border-color: #ff6b35;
+        }
+        .status {
+            background: rgba(255,107,53,0.1);
+            border-left: 4px solid #ff6b35;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 10px 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🏁 Dream Car Site</h1>
+        <p>Your Gateway to Automotive Excellence</p>
+    </div>
+    
+    <div class="container">
+        <div class="hero">
+            <h2>Welcome to the Ultimate Car Enthusiast Hub</h2>
+            <p>Discover, build, and share your passion for incredible automobiles</p>
+        </div>
+        
+        <div class="cars-grid">
+            <div class="car-card">
+                <h3>🏎️ Supercars</h3>
+                <p>Explore the world's fastest and most exclusive vehicles</p>
+            </div>
+            <div class="car-card">
+                <h3>🔧 Custom Builds</h3>
+                <p>Showcase your unique modifications and builds</p>
+            </div>
+            <div class="car-card">
+                <h3>🏆 Racing</h3>
+                <p>Track performance, lap times, and racing achievements</p>
+            </div>
+            <div class="car-card">
+                <h3>📱 Community</h3>
+                <p>Connect with fellow car enthusiasts worldwide</p>
+            </div>
+        </div>
+        
+        <div class="status">
+            <h3>📂 Repository Status</h3>
+            <p>This site is connected to your GitHub repository: <strong>gabrielcalouro-prog/Dream-Car-site</strong></p>
+            <p>Ready for your content! Push your HTML, CSS, and JavaScript files to make this site come alive.</p>
+        </div>
+    </div>
+</body>
+</html>
