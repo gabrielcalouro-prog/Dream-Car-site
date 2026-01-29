@@ -3,101 +3,319 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dream Car Site</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(45deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: white;
-            min-height: 100vh;
-        }
-        .header {
-            background: rgba(255,255,255,0.1);
-            padding: 20px;
-            text-align: center;
-            border-bottom: 2px solid #ff6b35;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        h1 {
-            font-size: 3.5em;
-            margin: 0;
-            background: linear-gradient(45deg, #ff6b35, #f7931e);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        .hero {
-            text-align: center;
-            margin: 60px 0;
-        }
-        .cars-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
-        .car-card {
-            background: rgba(255,255,255,0.05);
-            border-radius: 15px;
-            padding: 25px;
-            border: 2px solid rgba(255,107,53,0.3);
-            transition: transform 0.3s ease;
-        }
-        .car-card:hover {
-            transform: translateY(-5px);
-            border-color: #ff6b35;
-        }
-        .status {
-            background: rgba(255,107,53,0.1);
-            border-left: 4px solid #ff6b35;
-            padding: 20px;
-            margin: 30px 0;
-            border-radius: 0 10px 10px 0;
-        }
-    </style>
+    <meta name="description" content="Dream Car Site - Your ultimate destination for exotic cars, supercars, and automotive excellence. Explore, build, and share your passion for incredible automobiles.">
+    <meta name="keywords" content="cars, supercars, exotic cars, automotive, luxury cars, sports cars, car enthusiast">
+    <title>Dream Car Site - Automotive Excellence</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="header">
-        <h1>🏁 Dream Car Site</h1>
-        <p>Your Gateway to Automotive Excellence</p>
-    </div>
-    
-    <div class="container">
-        <div class="hero">
-            <h2>Welcome to the Ultimate Car Enthusiast Hub</h2>
-            <p>Discover, build, and share your passion for incredible automobiles</p>
-        </div>
-        
-        <div class="cars-grid">
-            <div class="car-card">
-                <h3>🏎️ Supercars</h3>
-                <p>Explore the world's fastest and most exclusive vehicles</p>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-car-side"></i>
+                <span>Dream Car Site</span>
             </div>
-            <div class="car-card">
-                <h3>🔧 Custom Builds</h3>
-                <p>Showcase your unique modifications and builds</p>
-            </div>
-            <div class="car-card">
-                <h3>🏆 Racing</h3>
-                <p>Track performance, lap times, and racing achievements</p>
-            </div>
-            <div class="car-card">
-                <h3>📱 Community</h3>
-                <p>Connect with fellow car enthusiasts worldwide</p>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="pages/gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="pages/builder.html" class="nav-link">Car Builder</a></li>
+                <li><a href="pages/community.html" class="nav-link">Community</a></li>
+                <li><a href="pages/about.html" class="nav-link">About</a></li>
+                <li><a href="pages/contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </div>
-        
-        <div class="status">
-            <h3>📂 Repository Status</h3>
-            <p>This site is connected to your GitHub repository: <strong>gabrielcalouro-prog/Dream-Car-site</strong></p>
-            <p>Ready for your content! Push your HTML, CSS, and JavaScript files to make this site come alive.</p>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-video-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-line">The Ultimate</span>
+                <span class="title-line highlight">Automotive Experience</span>
+            </h1>
+            <p class="hero-subtitle">Discover the world's most extraordinary supercars, exotic vehicles, and automotive masterpieces.</p>
+            <div class="hero-buttons">
+                <a href="pages/gallery.html" class="btn btn-primary">
+                    <i class="fas fa-images"></i>
+                    Explore Gallery
+                </a>
+                <a href="pages/builder.html" class="btn btn-secondary">
+                    <i class="fas fa-tools"></i>
+                    Build Your Dream
+                </a>
+            </div>
         </div>
-    </div>
+        <div class="hero-scroll">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Featured Cars Section -->
+    <section class="featured-cars">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Supercars</h2>
+                <p>Handpicked automotive excellence from around the world</p>
+            </div>
+            <div class="cars-grid">
+                <div class="car-card" data-car="mclaren">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&q=80" alt="McLaren 720S" loading="lazy">
+                        <div class="car-overlay">
+                            <div class="car-info">
+                                <h3>McLaren 720S</h3>
+                                <p>710 HP • 2.9s 0-60mph • $299,000</p>
+                                <div class="car-specs">
+                                    <span><i class="fas fa-tachometer-alt"></i> 212 mph</span>
+                                    <span><i class="fas fa-weight"></i> 3,186 lbs</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="car-card" data-car="lamborghini">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1544829099-b9a0c5303bea?w=800&q=80" alt="Lamborghini Huracán" loading="lazy">
+                        <div class="car-overlay">
+                            <div class="car-info">
+                                <h3>Lamborghini Huracán</h3>
+                                <p>630 HP • 2.5s 0-60mph • $248,000</p>
+                                <div class="car-specs">
+                                    <span><i class="fas fa-tachometer-alt"></i> 202 mph</span>
+                                    <span><i class="fas fa-weight"></i> 3,135 lbs</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="car-card" data-car="ferrari">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=800&q=80" alt="Ferrari F8 Tributo" loading="lazy">
+                        <div class="car-overlay">
+                            <div class="car-info">
+                                <h3>Ferrari F8 Tributo</h3>
+                                <p>710 HP • 2.9s 0-60mph • $276,000</p>
+                                <div class="car-specs">
+                                    <span><i class="fas fa-tachometer-alt"></i> 211 mph</span>
+                                    <span><i class="fas fa-weight"></i> 3,164 lbs</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="car-card" data-car="porsche">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1544829099-47f1b5c02b94?w=800&q=80" alt="Porsche 911 GT3" loading="lazy">
+                        <div class="car-overlay">
+                            <div class="car-info">
+                                <h3>Porsche 911 GT3</h3>
+                                <p>502 HP • 3.2s 0-60mph • $161,000</p>
+                                <div class="car-specs">
+                                    <span><i class="fas fa-tachometer-alt"></i> 197 mph</span>
+                                    <span><i class="fas fa-weight"></i> 3,164 lbs</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="car-card" data-car="bugatti">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1544829099-b9a0c5303bea?w=800&q=80" alt="Bugatti Chiron" loading="lazy">
+                        <div class="car-overlay">
+                            <div class="car-info">
+                                <h3>Bugatti Chiron</h3>
+                                <p>1,479 HP • 2.4s 0-60mph • $3,000,000</p>
+                                <div class="car-specs">
+                                    <span><i class="fas fa-tachometer-alt"></i> 261 mph</span>
+                                    <span><i class="fas fa-weight"></i> 4,398 lbs</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="car-card" data-car="koenigsegg">
+                    <div class="car-image">
+                        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&q=80" alt="Koenigsegg Regera" loading="lazy">
+                        <div class="car-overlay">
+                            <div class="car-info">
+                                <h3>Koenigsegg Regera</h3>
+                                <p>1,500 HP • 2.8s 0-60mph • $1,900,000</p>
+                                <div class="car-specs">
+                                    <span><i class="fas fa-tachometer-alt"></i> 251 mph</span>
+                                    <span><i class="fas fa-weight"></i> 3,510 lbs</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="stat-number" data-target="500">0</div>
+                    <div class="stat-label">Supercars Showcased</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number" data-target="10000">0</div>
+                    <div class="stat-label">Car Enthusiasts</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="stat-number" data-target="50">0</div>
+                    <div class="stat-label">Countries Covered</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="stat-number" data-target="100">0</div>
+                    <div class="stat-label">Awards Won</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Dream Car Site</h2>
+                <p>The ultimate destination for automotive excellence</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                    <h3>Comprehensive Database</h3>
+                    <p>Explore detailed specifications, performance data, and high-resolution imagery of the world's finest supercars.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Custom Car Builder</h3>
+                    <p>Design and configure your dream car with our advanced 3D builder and customization tools.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Vibrant Community</h3>
+                    <p>Connect with fellow enthusiasts, share experiences, and participate in exclusive automotive events.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Experience</h3>
+                    <p>Access your automotive passion anywhere with our responsive design and mobile-optimized experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay in the Fast Lane</h2>
+                <p>Get the latest supercar news, exclusive content, and early access to new features.</p>
+                <form class="newsletter-form" id="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Subscribe
+                    </button>
+                </form>
+                <p class="newsletter-disclaimer">
+                    <i class="fas fa-shield-alt"></i>
+                    Your privacy is important to us. We'll never share your email.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-car-side"></i>
+                        <span>Dream Car Site</span>
+                    </div>
+                    <p>Your ultimate destination for automotive excellence. Discover, explore, and celebrate the world's most extraordinary vehicles.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Explore</h3>
+                    <ul>
+                        <li><a href="pages/gallery.html">Car Gallery</a></li>
+                        <li><a href="pages/builder.html">Car Builder</a></li>
+                        <li><a href="pages/community.html">Community</a></li>
+                        <li><a href="pages/about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#">Supercars</a></li>
+                        <li><a href="#">Hypercars</a></li>
+                        <li><a href="#">Electric Cars</a></li>
+                        <li><a href="#">Classic Cars</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="pages/contact.html">Contact Us</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Dream Car Site. All rights reserved. Built with passion for automotive excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

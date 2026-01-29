@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our comprehensive gallery of the world's most extraordinary supercars, hypercars, and exotic vehicles.">
+    <title>Car Gallery - Dream Car Site</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/gallery.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-car-side"></i>
+                <a href="../index.html" style="color: inherit; text-decoration: none;">
+                    <span>Dream Car Site</span>
+                </a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+                <li><a href="builder.html" class="nav-link">Car Builder</a></li>
+                <li><a href="community.html" class="nav-link">Community</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Supercar Gallery</h1>
+            <p>Discover the world's most extraordinary automotive masterpieces</p>
+        </div>
+    </header>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-controls">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th"></i>
+                    All Cars
+                </button>
+                <button class="filter-btn" data-filter="supercar">
+                    <i class="fas fa-rocket"></i>
+                    Supercars
+                </button>
+                <button class="filter-btn" data-filter="hypercar">
+                    <i class="fas fa-fire"></i>
+                    Hypercars
+                </button>
+                <button class="filter-btn" data-filter="electric">
+                    <i class="fas fa-bolt"></i>
+                    Electric
+                </button>
+                <button class="filter-btn" data-filter="classic">
+                    <i class="fas fa-crown"></i>
+                    Classic
+                </button>
+            </div>
+            <div class="view-controls">
+                <button class="view-btn active" data-view="grid">
+                    <i class="fas fa-th-large"></i>
+                </button>
+                <button class="view-btn" data-view="list">
+                    <i class="fas fa-list"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <div class="container">
+            <div class="gallery-grid" id="gallery-grid">
+                <!-- McLaren Cars -->
+                <div class="gallery-item" data-category="supercar">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&q=80" alt="McLaren 720S" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>McLaren 720S</h3>
+                                <p class="car-price">$299,000</p>
+                                <div class="car-stats">
+                                    <span><i class="fas fa-tachometer-alt"></i> 710 HP</span>
+                                    <span><i class="fas fa-clock"></i> 2.9s 0-60</span>
+                                    <span><i class="fas fa-speedometer"></i> 212 mph</span>
+                                </div>
+                                <button class="view-details-btn">
+                                    <i class="fas fa-eye"></i>
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lamborghini Cars -->
+                <div class="gallery-item" data-category="supercar">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1544829099-b9a0c5303bea?w=800&q=80" alt="Lamborghini Huracán" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Lamborghini Huracán</h3>
+                                <p class="car-price">$248,000</p>
+                                <div class="car-stats">
+                                    <span><i class="fas fa-tachometer-alt"></i> 630 HP</span>
+                                    <span><i class="fas fa-clock"></i> 2.5s 0-60</span>
+                                    <span><i class="fas fa-speedometer"></i> 202 mph</span>
+                                </div>
+                                <button class="view-details-btn">
+                                    <i class="fas fa-eye"></i>
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ferrari Cars -->
+                <div class="gallery-item" data-category="supercar">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=800&q=80" alt="Ferrari F8 Tributo" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Ferrari F8 Tributo</h3>
+                                <p class="car-price">$276,000</p>
+                                <div class="car-stats">
+                                    <span><i class="fas fa-tachometer-alt"></i> 710 HP</span>
+                                    <span><i class="fas fa-clock"></i> 2.9s 0-60</span>
+                                    <span><i class="fas fa-speedometer"></i> 211 mph</span>
+                                </div>
+                                <button class="view-details-btn">
+                                    <i class="fas fa-eye"></i>
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Porsche Cars -->
+                <div class="gallery-item" data-category="supercar">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1544829099-47f1b5c02b94?w=800&q=80" alt="Porsche 911 GT3" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Porsche 911 GT3</h3>
+                                <p class="car-price">$161,000</p>
+                                <div class="car-stats">
+                                    <span><i class="fas fa-tachometer-alt"></i> 502 HP</span>
+                                    <span><i class="fas fa-clock"></i> 3.2s 0-60</span>
+                                    <span><i class="fas fa-speedometer"></i> 197 mph</span>
+                                </div>
+                                <button class="view-details-btn">
+                                    <i class="fas fa-eye"></i>
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bugatti Hypercar -->
+                <div class="gallery-item" data-category="hypercar">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&q=80" alt="Bugatti Chiron" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Bugatti Chiron</h3>
+                                <p class="car-price">$3,000,000</p>
+                                <div class="car-stats">
+                                    <span><i class="fas fa-tachometer-alt"></i> 1,479 HP</span>
+                                    <span><i class="fas fa-clock"></i> 2.4s 0-60</span>
+                                    <span><i class="fas fa-speedometer"></i> 261 mph</span>
+                                </div>
+                                <button class="view-details-btn">
+                                    <i class="fas fa-eye"></i>
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Koenigsegg Hypercar -->
+                <div class="gallery-item" data-category="hypercar">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1569901382653-8d2b9e48b844?w=800&q=80" alt="Koenigsegg Regera" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Koenigsegg Regera</h3>
+                                <p class="car-price">$1,900,000</p>
+                                <div class="car-stats">
+                                    <span><i class="fas fa-tachometer-alt"></i> 1,500 HP</span>
+                                    <span><i class="fas fa-clock"></i> 2.8s 0-60</span>
+                                    <span><i class="fas fa-speedometer"></i> 251 mph</span>
+                                </div>
+                                <button class="view-details-btn">
+                                    <i class="fas fa-eye"></i>
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tesla Electric -->
+                <div class="gallery-item" data-category="electric">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1536700503339-1e4b06520771?w=800&q=80" alt="Tesla Model S Plaid" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Tesla Model S Plaid</h3>
+                                <p class="car-price">$129,990</p>
+                                <div class="car-stats">
+                                    <span><i class="fas fa-bolt"></i> 1,020 HP</span>
+                                    <span><i class="fas fa-clock"></i> 1.9s 0-60</span>
+                                    <span><i class="fas fa-speedometer"></i> 200 mph</span>
+                                </div>
+                                <button class="view-details-btn">
+                                    <i class="fas fa-eye"></i>
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rimac Electric -->
+                <div class="gallery-item" data-category="electric hypercar">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=800&q=80" alt="Rimac Nevera" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Rimac Nevera</h3>
+                                <p class="car-price">$2,400,000</p>
+                                <div class="car-stats">
+                                    <span><i class="fas fa-bolt"></i> 1,914 HP</span>
+                                    <span><i class="fas fa-clock"></i> 1.8s 0-60</span>
+                                    <span><i class="fas fa-speedometer"></i> 258 mph</span>
+                                </div>
+                                <button class="view-details-btn">
+                                    <i class="fas fa-eye"></i>
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Classic Cars -->
+                <div class="gallery-item" data-category="classic">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80" alt="Ferrari 250 GTO" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Ferrari 250 GTO</h3>
+                                <p class="car-price">$70,000,000</p>
+                                <div class="car-stats">
+                                    <span><i class="fas fa-calendar"></i> 1962</span>
+                                    <span><i class="fas fa-trophy"></i> Le Mans</span>
+                                    <span><i class="fas fa-crown"></i> Legendary</span>
+                                </div>
+                                <button class="view-details-btn">
+                                    <i class="fas fa-eye"></i>
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="classic">
+                    <div class="gallery-image">
+                        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=800&q=80" alt="Shelby Cobra 427" loading="lazy">
+                        <div class="gallery-overlay">
+                            <div class="gallery-info">
+                                <h3>Shelby Cobra 427</h3>
+                                <p class="car-price">$2,500,000</p>
+                                <div class="car-stats">
+                                    <span><i class="fas fa-calendar"></i> 1965</span>
+                                    <span><i class="fas fa-flag-usa"></i> American</span>
+                                    <span><i class="fas fa-fire"></i> 425 HP</span>
+                                </div>
+                                <button class="view-details-btn">
+                                    <i class="fas fa-eye"></i>
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-section">
+                <button class="btn btn-primary load-more-btn">
+                    <i class="fas fa-plus"></i>
+                    Load More Cars
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-car-side"></i>
+                        <span>Dream Car Site</span>
+                    </div>
+                    <p>Your ultimate destination for automotive excellence.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Explore</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="builder.html">Car Builder</a></li>
+                        <li><a href="community.html">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#" data-filter="supercar">Supercars</a></li>
+                        <li><a href="#" data-filter="hypercar">Hypercars</a></li>
+                        <li><a href="#" data-filter="electric">Electric Cars</a></li>
+                        <li><a href="#" data-filter="classic">Classic Cars</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Dream Car Site. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/gallery.js"></script>
+</body>
+</html>
