@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Affiliate Dashboard - Dream Car Site</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/amazon-affiliate.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .dashboard {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .dashboard-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .dashboard-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+        
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .dashboard-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .dashboard-card h3 {
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+        }
+        
+        .metric-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .metric-item {
+            text-align: center;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 10px;
+        }
+        
+        .product-management {
+            margin-top: 40px;
+        }
+        
+        .product-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .product-table th,
+        .product-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .product-table th {
+            background: rgba(255, 107, 107, 0.2);
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        
+        .product-table td {
+            color: var(--text-muted);
+        }
+        
+        .status-active {
+            color: #28a745;
+        }
+        
+        .status-inactive {
+            color: #dc3545;
+        }
+        
+        .btn-small {
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            border-radius: 8px;
+        }
+        
+        .test-section {
+            margin-top: 40px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 107, 107, 0.2);
+        }
+        
+        .test-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .test-results {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 10px;
+            min-height: 100px;
+        }
+        
+        @media (max-width: 768px) {
+            .dashboard {
+                padding: 30px 15px;
+            }
+            
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .test-controls {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-car-side"></i>
+                <a href="../index.html" style="color: inherit; text-decoration: none;">
+                    <span>Dream Car Site</span>
+                </a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="builder.html" class="nav-link">Car Builder</a></li>
+                <li><a href="community.html" class="nav-link">Community</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="dashboard">
+        <div class="dashboard-header">
+            <h1><i class="fab fa-amazon"></i> Amazon Affiliate Dashboard</h1>
+            <p>Monitor performance and manage product recommendations</p>
+        </div>
+
+        <!-- Performance Metrics -->
+        <div class="dashboard-grid">
+            <div class="dashboard-card">
+                <h3><i class="fas fa-chart-line"></i> Performance Overview</h3>
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <div class="metric-value" id="total-clicks">0</div>
+                        <div class="metric-label">Total Clicks</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value" id="total-impressions">0</div>
+                        <div class="metric-label">Impressions</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value" id="ctr-rate">0%</div>
+                        <div class="metric-label">Click Rate</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value" id="total-revenue">$0</div>
+                        <div class="metric-label">Revenue</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-card">
+                <h3><i class="fas fa-cogs"></i> System Status</h3>
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <div class="metric-value status-active" id="system-status">Active</div>
+                        <div class="metric-label">Affiliate System</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value" id="products-count">0</div>
+                        <div class="metric-label">Products Available</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value" id="integration-points">0</div>
+                        <div class="metric-label">Integration Points</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value" id="last-updated">--</div>
+                        <div class="metric-label">Last Updated</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-card">
+                <h3><i class="fas fa-star"></i> Top Products</h3>
+                <div id="top-products-list">
+                    <p>Loading top performing products...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Management -->
+        <div class="product-management">
+            <div class="dashboard-card">
+                <h3><i class="fas fa-boxes"></i> Product Database</h3>
+                <table class="product-table" id="products-table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Rating</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="products-table-body">
+                        <tr>
+                            <td colspan="6" style="text-align: center; padding: 40px;">
+                                Loading products...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Testing Section -->
+        <div class="test-section">
+            <h3><i class="fas fa-flask"></i> Test Affiliate Integration</h3>
+            <p>Test different recommendation scenarios to optimize performance.</p>
+            
+            <div class="test-controls">
+                <button class="btn btn-primary" onclick="testRecommendations('engine')">
+                    Test Engine Parts
+                </button>
+                <button class="btn btn-primary" onclick="testRecommendations('suspension')">
+                    Test Suspension
+                </button>
+                <button class="btn btn-primary" onclick="testRecommendations('exterior')">
+                    Test Exterior
+                </button>
+                <button class="btn btn-primary" onclick="testRecommendations('tools')">
+                    Test Tools
+                </button>
+                <button class="btn btn-secondary" onclick="clearTestResults()">
+                    Clear Results
+                </button>
+            </div>
+            
+            <div class="test-results" id="test-results">
+                <p>Select a test category to see recommendations...</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <i class="fas fa-car-side"></i>
+                    <span>Dream Car Site</span>
+                </div>
+                <p>Building dreams, one car at a time.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="builder.html">Car Builder</a></li>
+                    <li><a href="community.html">Community</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Dream Car Site. All rights reserved. | 
+               <small>Amazon Associate Disclaimer: As an Amazon Associate, we earn from qualifying purchases.</small>
+            </p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/amazon-affiliate.js"></script>
+    <script src="../js/affiliate-integration.js"></script>
+    <script>
+        // Dashboard functionality
+        class AffiliateDashboard {
+            constructor() {
+                this.init();
+            }
+
+            init() {
+                this.loadPerformanceData();
+                this.loadProductDatabase();
+                this.loadSystemStatus();
+                this.setupAutoRefresh();
+            }
+
+            loadPerformanceData() {
+                if (!window.amazonAffiliate) {
+                    console.warn('Amazon Affiliate system not loaded');
+                    return;
+                }
+
+                const performance = window.amazonAffiliate.getPerformanceData();
+                
+                document.getElementById('total-clicks').textContent = performance.clicks.toLocaleString();
+                document.getElementById('total-impressions').textContent = performance.impressions.toLocaleString();
+                document.getElementById('ctr-rate').textContent = (performance.ctr * 100).toFixed(2) + '%';
+                document.getElementById('total-revenue').textContent = '$' + performance.revenue.toFixed(2);
+            }
+
+            loadProductDatabase() {
+                if (!window.amazonAffiliate) return;
+
+                const products = Object.values(window.amazonAffiliate.productDatabase).flat();
+                const tbody = document.getElementById('products-table-body');
+                
+                tbody.innerHTML = products.map(product => `
+                    <tr>
+                        <td>
+                            <strong>${product.name}</strong><br>
+                            <small>ID: ${product.id}</small>
+                        </td>
+                        <td>${product.category}</td>
+                        <td>${product.price}</td>
+                        <td>
+                            <span style="color: #ffd700;">★</span> ${product.rating}
+                        </td>
+                        <td>
+                            <span class="status-active">Active</span>
+                        </td>
+                        <td>
+                            <button class="btn btn-small btn-primary" onclick="viewProduct('${product.id}')">
+                                View
+                            </button>
+                        </td>
+                    </tr>
+                `).join('');
+
+                document.getElementById('products-count').textContent = products.length;
+            }
+
+            loadSystemStatus() {
+                const integrationStats = window.affiliateIntegration ? 
+                    window.affiliateIntegration.getIntegrationStats() : 
+                    { containersCount: 0, integrationPoints: [] };
+
+                document.getElementById('integration-points').textContent = integrationStats.integrationPoints.length;
+                document.getElementById('last-updated').textContent = new Date().toLocaleTimeString();
+            }
+
+            setupAutoRefresh() {
+                setInterval(() => {
+                    this.loadPerformanceData();
+                    document.getElementById('last-updated').textContent = new Date().toLocaleTimeString();
+                }, 30000); // Refresh every 30 seconds
+            }
+        }
+
+        function testRecommendations(category) {
+            if (!window.amazonAffiliate) {
+                document.getElementById('test-results').innerHTML = 
+                    '<p style="color: #dc3545;">Amazon Affiliate system not loaded</p>';
+                return;
+            }
+
+            const testContext = {
+                category: category,
+                buildType: 'street',
+                keywords: [category, 'performance', 'upgrade']
+            };
+
+            const recommendations = window.amazonAffiliate.getRecommendations(testContext);
+            const resultsContainer = document.getElementById('test-results');
+            
+            if (recommendations.length === 0) {
+                resultsContainer.innerHTML = `<p>No recommendations found for category: ${category}</p>`;
+                return;
+            }
+
+            resultsContainer.innerHTML = `
+                <h4>Test Results for "${category}" category:</h4>
+                <p>Found ${recommendations.length} recommendations</p>
+                <div class="affiliate-products-grid" style="margin-top: 20px;">
+                    ${recommendations.slice(0, 3).map(product => window.amazonAffiliate.renderProductCard(product)).join('')}
+                </div>
+            `;
+
+            window.amazonAffiliate.bindProductEvents(resultsContainer);
+        }
+
+        function clearTestResults() {
+            document.getElementById('test-results').innerHTML = 
+                '<p>Select a test category to see recommendations...</p>';
+        }
+
+        function viewProduct(productId) {
+            if (!window.amazonAffiliate) return;
+
+            const allProducts = Object.values(window.amazonAffiliate.productDatabase).flat();
+            const product = allProducts.find(p => p.id === productId);
+            
+            if (product) {
+                const enhancedProduct = window.amazonAffiliate.enhanceProduct(product);
+                window.open(enhancedProduct.affiliateUrl, '_blank');
+            }
+        }
+
+        // Initialize dashboard when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new AffiliateDashboard();
+        });
+    </script>
+</body>
+</html>

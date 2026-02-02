@@ -1,0 +1,458 @@
+/* Amazon Affiliate Integration Styles */
+
+.affiliate-section {
+    margin: 40px 0;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 107, 107, 0.2);
+}
+
+.affiliate-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.affiliate-header h2 {
+    color: var(--text-primary);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.affiliate-header h2 i {
+    color: var(--accent-color);
+    font-size: 1.8rem;
+}
+
+.affiliate-disclaimer {
+    color: var(--text-muted);
+    font-style: italic;
+    margin: 0;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 10px;
+    border-left: 3px solid var(--accent-color);
+}
+
+.affiliate-disclaimer small {
+    font-size: 0.85rem;
+}
+
+/* Products Grid */
+.affiliate-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* Product Card */
+.affiliate-product-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.affiliate-product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 107, 107, 0.2);
+    border-color: rgba(255, 107, 107, 0.4);
+}
+
+/* Product Image */
+.product-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.affiliate-product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.product-rating {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 8px 12px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    backdrop-filter: blur(10px);
+}
+
+.product-stars {
+    display: flex;
+    gap: 2px;
+}
+
+.product-stars i {
+    color: #ffd700;
+    font-size: 0.9rem;
+}
+
+.rating-value {
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Product Info */
+.product-info {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-name {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.product-description {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.product-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.product-category {
+    background: rgba(255, 107, 107, 0.2);
+    color: var(--accent-color);
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.product-price {
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(255, 107, 107, 0.3);
+}
+
+/* Affiliate Button */
+.affiliate-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: auto;
+}
+
+.affiliate-btn:hover {
+    background: linear-gradient(135deg, #ff5252, #ff7979);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+    color: white;
+    text-decoration: none;
+}
+
+.affiliate-btn:active {
+    transform: translateY(0);
+}
+
+.affiliate-btn i {
+    font-size: 1.1rem;
+}
+
+.affiliate-btn.clicked {
+    background: linear-gradient(135deg, #28a745, #34ce57);
+    animation: pulse 0.5s ease-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Amazon Branding */
+.affiliate-btn .fab.fa-amazon {
+    color: #ff9500;
+    text-shadow: 0 0 5px rgba(255, 149, 0, 0.5);
+}
+
+/* Loading States */
+.affiliate-products-loading {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-muted);
+}
+
+.affiliate-loading-spinner {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 20px;
+    border: 3px solid rgba(255, 107, 107, 0.2);
+    border-top: 3px solid var(--accent-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* No Recommendations */
+.no-recommendations {
+    text-align: center;
+    color: var(--text-muted);
+    font-style: italic;
+    padding: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .affiliate-section {
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 15px;
+    }
+    
+    .affiliate-header h2 {
+        font-size: 1.6rem;
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .affiliate-products-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .product-image {
+        height: 200px;
+    }
+    
+    .product-info {
+        padding: 15px;
+    }
+    
+    .product-meta {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .product-price {
+        font-size: 1.2rem;
+    }
+    
+    .affiliate-btn {
+        padding: 10px 16px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .affiliate-section {
+        padding: 15px;
+        margin: 15px 0;
+    }
+    
+    .affiliate-disclaimer {
+        padding: 8px 15px;
+    }
+    
+    .affiliate-disclaimer small {
+        font-size: 0.8rem;
+    }
+    
+    .product-name {
+        font-size: 1.1rem;
+    }
+    
+    .product-description {
+        font-size: 0.85rem;
+    }
+}
+
+/* Performance Metrics Display */
+.affiliate-performance {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 10px;
+    border-left: 3px solid var(--accent-color);
+}
+
+.affiliate-performance h4 {
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.performance-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+}
+
+.performance-stat {
+    text-align: center;
+}
+
+.performance-stat .value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 5px;
+}
+
+.performance-stat .label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Integration with Builder Steps */
+.build-step .affiliate-recommendations-container {
+    margin-top: 30px;
+}
+
+.build-step .affiliate-section {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 107, 107, 0.15);
+}
+
+/* Category-specific styling */
+.affiliate-product-card[data-category="Engine"] .product-category {
+    background: rgba(255, 107, 107, 0.2);
+    color: #ff6b6b;
+}
+
+.affiliate-product-card[data-category="Suspension"] .product-category {
+    background: rgba(107, 255, 107, 0.2);
+    color: #6bff6b;
+}
+
+.affiliate-product-card[data-category="Aerodynamics"] .product-category {
+    background: rgba(107, 107, 255, 0.2);
+    color: #6b6bff;
+}
+
+.affiliate-product-card[data-category="Interior"] .product-category {
+    background: rgba(255, 255, 107, 0.2);
+    color: #ffff6b;
+}
+
+/* Hover Effects */
+.affiliate-product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.affiliate-product-card:hover::before {
+    opacity: 1;
+}
+
+/* Amazon Prime Badge */
+.amazon-prime-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #00a8cc;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Compatibility Tags */
+.compatibility-tags {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.compatibility-tag {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-muted);
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+}
+
+/* Accessibility */
+.affiliate-btn:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.affiliate-product-card:focus-within {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.3);
+}
+
+/* Print Styles */
+@media print {
+    .affiliate-section {
+        display: none;
+    }
+}
