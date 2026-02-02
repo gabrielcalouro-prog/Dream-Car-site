@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIN Decoder Test</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/vin-decoder.css">
+    <style>
+        body {
+            padding: 50px;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+        }
+        .test-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .sample-vins {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 10px;
+        }
+        .sample-vins h3 {
+            margin-bottom: 10px;
+        }
+        .sample-vins button {
+            margin: 5px;
+            padding: 5px 10px;
+            background: rgba(255, 107, 107, 0.2);
+            border: 1px solid rgba(255, 107, 107, 0.4);
+            color: var(--text-primary);
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+        .sample-vins button:hover {
+            background: rgba(255, 107, 107, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🚗 VIN Decoder Test</h1>
+        
+        <div class="form-group">
+            <label for="vin-input">VIN Number (17 characters)</label>
+            <input type="text" 
+                   id="vin-input" 
+                   placeholder="e.g., 1HGBH41JXMN109186" 
+                   maxlength="17"
+                   class="vin-input">
+            <div class="char-counter">
+                <span id="vin-counter">0</span>/17 characters
+            </div>
+        </div>
+
+        <button id="decode-vin" class="btn btn-primary btn-full" disabled>
+            <i class="fas fa-search"></i>
+            Decode VIN
+        </button>
+
+        <!-- Results will appear here -->
+        
+        <div class="sample-vins">
+            <h3>Sample VINs for Testing:</h3>
+            <button onclick="testVin('1HGBH41JXMN109186')">1HGBH41JXMN109186 (Honda)</button>
+            <button onclick="testVin('JH4TB2H26CC000000')">JH4TB2H26CC000000 (Acura)</button>
+            <button onclick="testVin('5NPE24AF2FH000001')">5NPE24AF2FH000001 (Hyundai)</button>
+            <button onclick="testVin('1G1BE5SM7H7000001')">1G1BE5SM7H7000001 (Chevrolet)</button>
+            <button onclick="testVin('WBA3A5G59DNP26082')">WBA3A5G59DNP26082 (BMW)</button>
+        </div>
+    </div>
+
+    <script>
+        function testVin(vin) {
+            document.getElementById('vin-input').value = vin;
+            document.getElementById('vin-input').dispatchEvent(new Event('input'));
+        }
+    </script>
+    <script src="js/vin-decoder.js"></script>
+</body>
+</html>

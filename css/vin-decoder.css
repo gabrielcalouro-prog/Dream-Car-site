@@ -1,0 +1,247 @@
+/* VIN Decoder Styles */
+
+.vin-input {
+    font-family: 'Courier New', monospace;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.char-counter {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 5px;
+}
+
+.vin-results {
+    margin-top: 20px;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Loading State */
+.vin-loading {
+    text-align: center;
+    padding: 30px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 107, 107, 0.2);
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 15px;
+    border: 3px solid rgba(255, 107, 107, 0.2);
+    border-top: 3px solid var(--accent-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.vin-loading p {
+    margin: 0;
+    color: var(--text-muted);
+}
+
+/* Error State */
+.vin-error {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 0, 0, 0.1);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 0, 0, 0.3);
+}
+
+.vin-error i {
+    color: #ff4444;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.vin-error p {
+    margin: 0;
+    color: #ff6666;
+}
+
+/* Success State */
+.vin-success {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 107, 107, 0.2);
+    padding: 25px;
+}
+
+.vehicle-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.vehicle-header i {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+}
+
+.vehicle-header h3 {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+/* Vehicle Details */
+.vehicle-details {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.detail-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.detail-row i {
+    width: 20px;
+    text-align: center;
+    color: var(--accent-color);
+    font-size: 0.9rem;
+}
+
+.detail-row .label {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    min-width: 120px;
+}
+
+.detail-row .value {
+    color: var(--text-primary);
+    font-weight: 500;
+    flex: 1;
+}
+
+/* Actions */
+.vin-actions {
+    text-align: center;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-continue {
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-continue:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+}
+
+/* Button States */
+.btn:disabled {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-muted);
+    cursor: not-allowed;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn:disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-muted);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .vehicle-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .detail-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .detail-row .label {
+        min-width: auto;
+        font-weight: 600;
+    }
+    
+    .vin-input {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+}
+
+/* Enhanced Visual Feedback */
+.vin-input:valid {
+    border-color: rgba(0, 255, 0, 0.5);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+}
+
+.vin-input:invalid:not(:placeholder-shown) {
+    border-color: rgba(255, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+}
+
+/* Divider styling enhancement */
+.divider {
+    position: relative;
+    text-align: center;
+    margin: 25px 0;
+    color: var(--text-muted);
+}
+
+.divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+}
+
+.divider span {
+    background: var(--bg-dark);
+    padding: 0 15px;
+    position: relative;
+    z-index: 1;
+}
